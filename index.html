@@ -29,38 +29,61 @@
           <!-- Content div -->
           <!-- content container -->
           <div
-            class="relative w-full h-full z-10 flex items-center justify-between"
+            class="relative w-full h-full z-10 flex items-center lg:justify-between gap-4"
           >
             <!-- text -->
-            <div>
-              <h1 class="text-white/100 text-6xl font-extrabold leading-20">
+            <div class="w-2/3 border-amber-300 border rounded-2xl p-4">
+              <h1
+                class="text-white/100 text-2xl lg:text-6xl font-extrabold lg:leading-20 pb-2"
+              >
                 Welcome to the<br /><span
                   class="bg-gradient-to-r from-purple-400 to-purple-700 bg-clip-text text-transparent"
                   >Retro </span
                 >Forum
               </h1>
-              <p class="text-xl font-bold text-white/70">
-                Share your favorite opinion and win<br />a wp forum coffee mug!
+              <p
+                class="text-xl font-bold text-green-400 border border-b-emerald-400 p-3 rounded-2xl"
+              >
+                Share your favorite opinion and win <br />
+                a wp forum coffee mug!
               </p>
             </div>
             <!-- table -->
-            <div>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p></p>
+            <div
+              class="p-2 lg:p-12 rounded-2xl lg:rounded-4xl bg-white flex items-end gap-2 lg:gap-14 w-1/3"
+            >
+              <div class="flex flex-col gap-1">
+                <p>Registered Users</p>
+                <hr />
+                <p>forum</p>
+                <hr />
+                <p>Topics</p>
+                <hr />
+                <p>Replies</p>
+                <hr />
+              </div>
+              <div class="flex flex-col gap-1">
+                <p>01</p>
+                <hr />
+                <p>05</p>
+                <hr />
+                <p>01</p>
+                <hr />
+                <p>01</p>
+                <hr />
+              </div>
             </div>
           </div>
 
           <!-- div to center the search container -->
-          <div class="flex justify-center items-center mt-5">
+          <div class="flex justify-center items-center mt-5 relative z-20">
             <!-- Search Container -->
             <div class="flex items-center bg-white rounded-full px-4 py-3">
               <!-- Search Field -->
               <input
                 type="text"
                 placeholder="Search here anything..."
-                class="font-bold border-0 pl-6"
+                class="pl-6 font-bold border-0"
               />
               <!-- Search Button -->
               <button class="btn btn-primary rounded-full text-white px-7">
