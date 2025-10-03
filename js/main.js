@@ -2,6 +2,16 @@
 // enable different color inside Template String"
 // const html = (strings, ...values) => strings.join('');
 
+const spinner = document.getElementById("spinner-container");
+// toggle Spinner function
+const toggleSpinner = (isLoading) => {
+  if (isLoading) {
+    spinner.classList.remove("hidden");
+  } else {
+    spinner.classList.add("hidden");
+  }
+};
+
 // error-show container id---global declaration
 const errorShow = document.getElementById("error-msg");
 const showAll = document.getElementById("show-all");
@@ -103,6 +113,7 @@ const displayData = (posts, isShowAll) => {
     // appending child into  card container
     cardContainer.appendChild(card);
   });
+  toggleSpinner(false);
 };
 
 // getData function
@@ -120,9 +131,6 @@ const getData = async (searchText, isShowAll) => {
     }
     const data = await res.json();
     const posts = data.posts;
-
-    console.log(posts);
-    // passing this array data into another function and make them display for each object
     displayData(posts, isShowAll);
   } catch (error) {
     console.error(error.message);
@@ -134,7 +142,10 @@ const getData = async (searchText, isShowAll) => {
 const btnClicked = (isShowAll) => {
   const searchField = document.getElementById("search-field");
   const searchText = searchField.value;
-  getData(searchText, isShowAll);
+  toggleSpinner(true);
+  setTimeout(() => {
+    getData(searchText, isShowAll);
+  }, 1000);
   setTimeout(() => {
     searchField.value = "";
   }, 500);
