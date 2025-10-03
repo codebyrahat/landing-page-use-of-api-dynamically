@@ -112,14 +112,7 @@
           <!-- Dynamic Card container-->
           <div
             id="dynamic-card-container"
-            class="flex flex-col gap-2 lg:gap-6 lg:w-2/3 w-full">
-            <!-- show more button -->
-            <button
-              id="show-all"
-              class="btn btn-secondary text-center mt-6 hidden">
-              Show All
-            </button>
-          </div>
+            class="flex flex-col gap-2 lg:gap-6 lg:w-2/3 w-full"></div>
 
           <!-- Dynamic Title container -->
           <div
@@ -141,6 +134,17 @@
               <!-- viewCount -->
               <span></span>
             </div>
+          </div>
+        </div>
+        <!-- show all button -->
+        <div class="w-2/3 mt-2">
+          <div class="flex justify-center">
+            <button
+              onclick="doShowAll()"
+              id="show-all"
+              class="btn btn-secondary text-center hidden">
+              Show All
+            </button>
           </div>
         </div>
       </section>

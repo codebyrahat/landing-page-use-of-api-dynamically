@@ -5,10 +5,14 @@
 // error-show container id---global declaration
 const errorShow = document.getElementById("error-msg");
 const showAll = document.getElementById('show-all');
+// getting card container
+const cardContainer = document.getElementById("dynamic-card-container");
 
 
 // displayData function
 const displayData = (posts, isShowAll) => {
+  cardContainer.textContent = "";
+  showAll.classList.add('hidden');
   // updating error msg, if search context is unavailable
   if (posts.length < 1) {
     errorShow.classList.remove('text-green-400');
@@ -26,12 +30,11 @@ const displayData = (posts, isShowAll) => {
   }
   //  slice to enable show all button
   if (posts.length > 3 && !isShowAll) {
-    posts = posts.slice(0, 3)
-    showAll.classList.remove('hidden')
+    posts = posts.slice(0, 3);
+    showAll.classList.remove('hidden');
   }
 
-  // getting card container
-  const cardContainer = document.getElementById("dynamic-card-container");
+
   //  for each loop
   posts.forEach((post) => {
     const card = document.createElement("div");
@@ -111,15 +114,17 @@ const getData = async (searchText, isShowAll) => {
       );
 
     }
-    res = await fetch(
-      `https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`
-    );
+    else {
+      res = await fetch(
+        `https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`
+      );
+    }
     const data = await res.json();
     const posts = data.posts;
 
     console.log(posts);
     // passing this array data into another function and make them display for each object
-    displayData(posts);
+    displayData(posts, isShowAll);
   } catch (error) {
     console.error(error.message);
     errorShow.textContent = error.message;
@@ -136,3 +141,11 @@ const btnClicked = (isShowAll) => {
     searchField.value = '';
   }, 500);
 };
+
+// show all function
+const doShowAll = () => {
+
+  btnClicked(true);
+  showAll.classList.add('hidden');
+
+}
