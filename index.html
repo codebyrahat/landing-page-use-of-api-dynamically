@@ -121,18 +121,12 @@
             <!-- To show text of "title & mark as read" -->
             <div class="flex justify-between items-center mb-2 lg:mb-5">
               <p class="text-black text-3xl">Title</p>
-
-              <!-- Dynamic Counter Id -->
-              <p>Mark as read ( <span id="counter">0</span> )</p>
-            </div>
-
-            <!-- dynamic title div goes in innerHtml -->
-            <div class="rounded-2xl lg:p-4 p-2 bg-white">
-              <!-- title -->
-              <span class="mr-2"></span>
-              <span class="mr-1"><img src="svg/eye.svg" alt="" /></span>
-              <!-- viewCount -->
-              <span></span>
+              <!-- mark logo -->
+              <div class="flex gap-2 items-center">
+                <img src="svg/mark-as-read.svg" alt="icon of marked" />
+                <!-- Dynamic Counter Id -->
+                <p>Mark as read ( <span id="counter">0</span> )</p>
+              </div>
             </div>
           </div>
         </div>
